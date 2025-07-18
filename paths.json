@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/nrk-eds-demo/:/",
+    "/content/nrk-eds-demo/configuration:/.helix/config.json",
+    "/content/nrk-eds-demo/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/nrk-eds-demo/"
   ]
 }
