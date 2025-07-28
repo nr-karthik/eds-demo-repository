@@ -161,6 +161,18 @@
     ]
   },
   {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "API Url",
+        "label": "API Url",
+        "multi": false
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
