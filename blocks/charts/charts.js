@@ -26,7 +26,7 @@ export default async function decorate(block) {
   // canvas.width = 800;
   // canvas.height = 400;
   const chartJSON = await getChartJSON();
-  block.textContent = JSON.stringify(chartJSON);
+  // block.textContent = JSON.stringify(chartJSON);
   block.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 

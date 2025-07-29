@@ -164,11 +164,10 @@
     "id": "charts",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
         "valueType": "string",
-        "name": "API Url",
-        "label": "API Url",
-        "multi": false
+        "name": "API URL",
+        "label": "API URL"
       },
       {
         "component": "select",
