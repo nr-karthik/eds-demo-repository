@@ -161,7 +161,7 @@
     ]
   },
   {
-    "id": "card",
+    "id": "charts",
     "fields": [
       {
         "component": "reference",
@@ -169,6 +169,25 @@
         "name": "API Url",
         "label": "API Url",
         "multi": false
+      },
+      {
+        "component": "select",
+        "name": "chartType",
+        "label": "Chart Type",
+        "options": [
+          {
+            "name": "Bar Chart",
+            "value": "barChart"
+          },
+          {
+            "name": "Line Chart",
+            "value": "lineChart"
+          },
+          {
+            "name": "Pie Chart",
+            "value": "pieChart"
+          }
+        ]
       }
     ]
   },
