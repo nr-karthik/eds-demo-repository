@@ -44,15 +44,15 @@ export default async function decorate(block) {
         {
           label: 'Rexulti',
           data: rexultiData,
-          backgroundColor: 'rgba(54, 162, 235, 0.6)',
-          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(118, 155, 205)',
+          borderColor: 'rgba(118, 155, 205)',
           borderWidth: 1,
         },
         {
           label: 'Placebo',
           data: placeboData,
-          backgroundColor: 'rgba(255, 99, 132, 0.6)',
-          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(136, 136, 136)',
+          borderColor: 'rgba(136, 136, 136)',
           borderWidth: 1,
         },
       ],
@@ -64,16 +64,16 @@ export default async function decorate(block) {
           beginAtZero: false, // because values are negative
           title: {
             display: true,
-            text: 'Change in Behavior Score',
+            text: 'Aggressive Behaviors',
           },
         },
       },
-      plugins: {
-        title: {
-          display: true,
-          text: 'Behavioral Changes: Rexulti vs Placebo',
-        },
-      },
+      // plugins: {
+      //   title: {
+      //     display: true,
+      //     text: 'Behavioral Changes: Rexulti vs Placebo',
+      //   },
+      // },
     },
   };
 
