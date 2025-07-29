@@ -4,7 +4,5 @@
     "/content/nrk-eds-demo/configuration:/.helix/config.json",
     "/content/nrk-eds-demo/metadata:/metadata.json"
   ],
-  "includes": [
-    "/content/nrk-eds-demo/"
-  ]
+  "includes": ["/content/nrk-eds-demo/"]
 }

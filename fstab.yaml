@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p7906-e1488805.adobeaemcloud.com/bin/franklin.delivery/nr-karthik/eds-demo-repository/main"
-    type: "markup"
-    suffix: ".html"
+    url: 'https://author-p7906-e1488805.adobeaemcloud.com/bin/franklin.delivery/nr-karthik/eds-demo-repository/main'
+    type: 'markup'
+    suffix: '.html'
