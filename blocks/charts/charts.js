@@ -65,7 +65,7 @@ export default async function decorate(block) {
           beginAtZero: false, // because values are negative
           ticks: {
             font: {
-              size: 20,
+              size: 14,
               family: 'Roboto',
               weight: 'bold',
             },
@@ -77,7 +77,7 @@ export default async function decorate(block) {
             display: true,
             text: 'Aggressive Behaviors',
             font: {
-              size: 20,
+              size: 14,
               family: 'Roboto',
               weight: 'bold',
             },
@@ -89,7 +89,7 @@ export default async function decorate(block) {
           display: true,
           text: 'Behavioral Changes: Rexulti vs Placebo',
           font: {
-            size: 20,
+            size: 14,
             family: 'Roboto',
             weight: 'bold',
           },
