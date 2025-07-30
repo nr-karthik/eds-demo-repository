@@ -23,8 +23,8 @@ export default async function decorate(block) {
   await waitForChartJS();
   const canvas = document.createElement('canvas');
   canvas.id = 'myChart';
-  // canvas.width = 800;
-  // canvas.height = 400;
+  canvas.width = 800;
+  canvas.height = 400;
   const chartJSON = await getChartJSON();
   // block.textContent = JSON.stringify(chartJSON);
   block.appendChild(canvas);
@@ -58,7 +58,8 @@ export default async function decorate(block) {
       ],
     },
     options: {
-      responsive: true,
+      responsive: false,
+      maintainAspectRatio: false,
       scales: {
         x: {
           beginAtZero: false, // because values are negative
