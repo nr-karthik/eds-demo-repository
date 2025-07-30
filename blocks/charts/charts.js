@@ -60,6 +60,16 @@ export default async function decorate(block) {
     options: {
       responsive: true,
       scales: {
+        x: {
+          beginAtZero: false, // because values are negative
+          ticks: {
+            font: {
+              size: 20,
+              family: 'Roboto',
+              weight: 'bold',
+            },
+          },
+        },
         y: {
           beginAtZero: false, // because values are negative
           title: {
