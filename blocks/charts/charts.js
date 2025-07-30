@@ -65,6 +65,11 @@ export default async function decorate(block) {
           title: {
             display: true,
             text: 'Aggressive Behaviors',
+            font: {
+              size: 20,
+              family: 'Roboto',
+              weight: 'bold',
+            },
           },
         },
       },
@@ -73,13 +78,14 @@ export default async function decorate(block) {
           display: true,
           text: 'Behavioral Changes: Rexulti vs Placebo',
           font: {
-            size: 14,
+            size: 20,
             family: 'Roboto',
             weight: 'bold',
           },
         },
         legend: {
           display: true,
+          position: 'bottom',
           align: 'start',
         },
       },
