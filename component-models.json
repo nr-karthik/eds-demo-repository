@@ -164,18 +164,28 @@
     "id": "charts",
     "fields": [
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "component": "text",
+        "name": "name",
+        "label": "API URL"
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "component": "select",
+        "name": "Type of Chart",
+        "label": "Type of Chart",
+        "options": [
+          {
+            "name": "Bar Chart",
+            "value": "barChart"
+          },
+          {
+            "name": "Line Chart",
+            "value": "lineChart"
+          },
+          {
+            "name": "Pie Chart",
+            "value": "pieChart"
+          }
+        ]
       }
     ]
   },
