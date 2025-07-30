@@ -68,12 +68,21 @@ export default async function decorate(block) {
           },
         },
       },
-      // plugins: {
-      //   title: {
-      //     display: true,
-      //     text: 'Behavioral Changes: Rexulti vs Placebo',
-      //   },
-      // },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Behavioral Changes: Rexulti vs Placebo',
+          font: {
+            size: 14,
+            family: 'Roboto',
+            weight: 'bold',
+          },
+        },
+        legend: {
+          display: true,
+          align: 'start',
+        },
+      },
     },
   };
 
