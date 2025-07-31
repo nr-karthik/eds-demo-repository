@@ -2,8 +2,8 @@
 // script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
 // document.head.appendChild(script);
 
-// eslint-disable-next-line import/extensions
-import Chart from 'chart.js/auto';
+// eslint-disable-next-line import/no-unresolved
+import Chart from 'https://cdn.jsdelivr.net/npm/chart.js';
 
 const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
 
