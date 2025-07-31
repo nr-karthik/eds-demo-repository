@@ -27,6 +27,11 @@
           "label": "API URL"
         },
         {
+          "component": "text",
+          "name": "API URL",
+          "label": "API URL"
+        },
+        {
           "component": "select",
           "name": "Type of Chart",
           "label": "Type of Chart",
