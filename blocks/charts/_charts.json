@@ -23,11 +23,6 @@
       "fields": [
         {
           "component": "text",
-          "name": "name",
-          "label": "API URL"
-        },
-        {
-          "component": "text",
           "name": "API URL",
           "label": "API URL"
         },
