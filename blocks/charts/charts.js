@@ -7,7 +7,8 @@ async function getChartJSON() {
 }
 
 export default async function decorate(block) {
-  console.log(readBlockConfig(block));
+  const properties = readBlockConfig(block);
+  console.log(properties);
 
   // await waitForChartJS();
   const canvas = document.createElement('canvas');
