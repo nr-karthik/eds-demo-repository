@@ -1,40 +1,13 @@
-// const script = document.createElement('script');
-// script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-// document.head.appendChild(script);
+import { readBlockConfig } from '../../scripts/aem';
 
 const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
-
-// // Helper to wait for Chart.js to load
-// function waitForChartJS() {
-//   return new Promise((resolve) => {
-//     if (window.Chart) {
-//       resolve();
-//     } else {
-//       script.onload = resolve;
-//     }
-//   });
-// }
 
 async function getChartJSON() {
   return fetch(API_URL).then((response) => response.json());
 }
 
 export default async function decorate(block) {
-  // if (!window.Chart) {
-  //   console.log(
-  //     'Chart.js not loaded, checking if it can be imported dynamically...'
-  //   );
-  //   console.warn('Chart.js not loaded yet, dynamically importing now...');
-  //   await import(
-  //     // eslint-disable-next-line import/no-unresolved
-  //     'https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js'
-  //   );
-  // }
-
-  // if (!window.Chart) {
-  //   console.error('Chart.js still not available, aborting...');
-  //   return;
-  // }
+  console.log(readBlockConfig(block));
 
   // await waitForChartJS();
   const canvas = document.createElement('canvas');
