@@ -1,4 +1,4 @@
-import { readBlockConfig } from '../../scripts/aem';
+import { readBlockConfig } from '../../scripts/aem.js';
 
 const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
 
