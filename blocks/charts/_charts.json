@@ -23,12 +23,12 @@
       "fields": [
         {
           "component": "text",
-          "name": "API URL",
+          "name": "apiUrl",
           "label": "API URL"
         },
         {
           "component": "select",
-          "name": "Type of Chart",
+          "name": "chartType",
           "label": "Type of Chart",
           "options": [
             {
