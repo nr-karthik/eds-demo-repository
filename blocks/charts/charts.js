@@ -20,21 +20,21 @@ async function getChartJSON() {
 }
 
 export default async function decorate(block) {
-  if (!window.Chart) {
-    console.log(
-      'Chart.js not loaded, checking if it can be imported dynamically...'
-    );
-    console.warn('Chart.js not loaded yet, dynamically importing now...');
-    await import(
-      // eslint-disable-next-line import/no-unresolved
-      'https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js'
-    );
-  }
+  // if (!window.Chart) {
+  //   console.log(
+  //     'Chart.js not loaded, checking if it can be imported dynamically...'
+  //   );
+  //   console.warn('Chart.js not loaded yet, dynamically importing now...');
+  //   await import(
+  //     // eslint-disable-next-line import/no-unresolved
+  //     'https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js'
+  //   );
+  // }
 
-  if (!window.Chart) {
-    console.error('Chart.js still not available, aborting...');
-    return;
-  }
+  // if (!window.Chart) {
+  //   console.error('Chart.js still not available, aborting...');
+  //   return;
+  // }
 
   // await waitForChartJS();
   const canvas = document.createElement('canvas');
