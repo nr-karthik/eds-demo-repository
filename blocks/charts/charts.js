@@ -1,26 +1,26 @@
-const script = document.createElement('script');
-script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-document.head.appendChild(script);
+// const script = document.createElement('script');
+// script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+// document.head.appendChild(script);
 
 const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
 
 // // Helper to wait for Chart.js to load
-function waitForChartJS() {
-  return new Promise((resolve) => {
-    if (window.Chart) {
-      resolve();
-    } else {
-      script.onload = resolve;
-    }
-  });
-}
+// function waitForChartJS() {
+//   return new Promise((resolve) => {
+//     if (window.Chart) {
+//       resolve();
+//     } else {
+//       script.onload = resolve;
+//     }
+//   });
+// }
 
 async function getChartJSON() {
   return fetch(API_URL).then((response) => response.json());
 }
 
 export default async function decorate(block) {
-  await waitForChartJS();
+  // await waitForChartJS();
   const canvas = document.createElement('canvas');
   canvas.id = 'myChart';
   canvas.width = 800;
@@ -102,8 +102,8 @@ export default async function decorate(block) {
     },
   };
   // Render char
-  document.onload = () => {
-    new Chart(ctx, config);
-  };
-  // new Chart(ctx, config);
+  // document.onload = () => {
+  //   new Chart(ctx, config);
+  // };
+  new Chart(ctx, config);
 }
