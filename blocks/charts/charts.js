@@ -102,5 +102,8 @@ export default async function decorate(block) {
     },
   };
   // Render char
-  new Chart(ctx, config);
+  document.onload = () => {
+    new Chart(ctx, config);
+  };
+  // new Chart(ctx, config);
 }
