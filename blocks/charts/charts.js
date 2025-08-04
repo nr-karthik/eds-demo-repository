@@ -136,6 +136,8 @@ export default async function decorate(block) {
         .filter((item) => item.name === name)
         .map((item) => item.dataset_1);
 
+    console.log(labels, groupByName('-13.3'), groupByName('-20.0'));
+
     // Chart config
     config = {
       type: chartType,
