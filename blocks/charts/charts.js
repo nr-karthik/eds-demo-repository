@@ -40,7 +40,7 @@ export default async function decorate(block) {
   // await waitForChartJS();
   const API_URL = new URL(relativeJSONPath, window.location.href);
   const chartJSON = await getChartJSON(API_URL);
-  console.log(chartJSON);
+  console.log(chartJSON.data);
   console.log(chartTitle, relativeJSONPath, yAxisLabel, xAxisLabel, chartType);
 
   const canvas = document.createElement('canvas');
@@ -128,9 +128,7 @@ export default async function decorate(block) {
 
   if (chartType === 'line') {
     const groupByName = (name) =>
-      chartJSON.data
-        .filter((item) => item.name === name)
-        .map((obj) => ({ x: obj.dataset_1, y: obj.dataset_2 }));
+      chartJSON.data.filter((item) => item.name === name);
 
     console.log(groupByName(-13.3));
 
