@@ -1,5 +1,3 @@
-import { readBlockConfig } from '../../scripts/aem.js';
-
 const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
 
 async function getChartJSON() {
@@ -7,16 +5,13 @@ async function getChartJSON() {
 }
 
 export default async function decorate(block) {
-  const properties = readBlockConfig(block);
-  console.log(properties);
-
   // await waitForChartJS();
   const canvas = document.createElement('canvas');
   canvas.id = 'myChart';
   canvas.width = 800;
   canvas.height = 400;
   const chartJSON = await getChartJSON();
-  console.log(block);
+  console.log(Array.from(block.children));
   // block.textContent = JSON.stringify(chartJSON);
   block.appendChild(canvas);
   const ctx = canvas.getContext('2d');
