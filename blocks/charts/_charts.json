@@ -43,15 +43,15 @@
           "options": [
             {
               "name": "Bar Chart",
-              "value": "barChart"
+              "value": "bar"
             },
             {
               "name": "Line Chart",
-              "value": "lineChart"
+              "value": "line"
             },
             {
               "name": "Pie Chart",
-              "value": "pieChart"
+              "value": "pie"
             }
           ]
         }
