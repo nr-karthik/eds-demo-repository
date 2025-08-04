@@ -132,6 +132,8 @@ export default async function decorate(block) {
         .filter((item) => item.name === name)
         .map((item) => ({ x: item.dataset_1, y: item.dataset_2 }));
 
+    console.log(groupByName(-13.3));
+
     // Chart config
     config = {
       type: chartType,
