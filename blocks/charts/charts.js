@@ -130,7 +130,7 @@ export default async function decorate(block) {
     const groupByName = (name) =>
       chartJSON.data
         .filter((item) => item.name === name)
-        .map((item) => ({ x: item.dataset_1, y: item.dataset_2 }));
+        .map((obj) => ({ x: obj.dataset_1, y: obj.dataset_2 }));
 
     console.log(groupByName(-13.3));
 
