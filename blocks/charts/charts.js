@@ -9,7 +9,8 @@ export default async function decorate(block) {
   let chartType = null;
   let chartTitle = null;
 
-  block.children.forEach((child, i) => {
+  // Get all child elements of block
+  Array.from(block.children).forEach((child, i) => {
     if (i === 0) {
       relativeJSONPath = child.querySelector('a').getAttribute('href');
       child.style.display = 'none';
