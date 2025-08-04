@@ -28,6 +28,11 @@
         },
         {
           "component": "text",
+          "name": "chartTitle",
+          "label": "Chart Title"
+        },
+        {
+          "component": "text",
           "name": "yAxisLabel",
           "label": "Y Axis Label"
         },
