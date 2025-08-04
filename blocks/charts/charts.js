@@ -1,6 +1,6 @@
-const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
+// const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
 
-async function getChartJSON() {
+async function getChartJSON(API_URL) {
   return fetch(API_URL).then((response) => response.json());
 }
 
@@ -34,6 +34,8 @@ export default async function decorate(block) {
     }
   });
 
+  const API_URL = new URL(relativeJSONPath, window.location.href);
+
   console.log(relativeJSONPath, yAxisLabel, xAxisLabel, chartType);
 
   // await waitForChartJS();
@@ -41,8 +43,8 @@ export default async function decorate(block) {
   canvas.id = 'myChart';
   canvas.width = 800;
   canvas.height = 400;
-  const chartJSON = await getChartJSON();
-  console.log(Array.from(block.children));
+  const chartJSON = await getChartJSON(API_URL);
+  console.log(JSON.stringify(chartJSON));
   // block.textContent = JSON.stringify(chartJSON);
   block.appendChild(canvas);
   const ctx = canvas.getContext('2d');
@@ -52,7 +54,7 @@ export default async function decorate(block) {
   const placeboData = chartJSON.map((item) => item.placebo);
   // Chart config
   const config = {
-    type: 'bar',
+    type: chartType,
     data: {
       labels,
       datasets: [
