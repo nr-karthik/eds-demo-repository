@@ -165,8 +165,18 @@
     "fields": [
       {
         "component": "text",
-        "name": "apiUrl",
-        "label": "API URL"
+        "name": "chartPath",
+        "label": "Relative Chart JSON Path"
+      },
+      {
+        "component": "text",
+        "name": "yAxisLabel",
+        "label": "Y Axis Label"
+      },
+      {
+        "component": "text",
+        "name": "xAxisLabel",
+        "label": "X Axis Label"
       },
       {
         "component": "select",
