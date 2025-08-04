@@ -1,5 +1,3 @@
-// const API_URL = 'https://mocki.io/v1/257fd7fc-f7af-4dbd-8396-27923afbd0aa';
-
 async function getChartJSON(API_URL) {
   return fetch(API_URL).then((response) => response.json());
 }
@@ -45,14 +43,13 @@ export default async function decorate(block) {
   canvas.height = 400;
   const chartJSON = await getChartJSON(API_URL);
   console.log(chartJSON);
-  console.log(JSON.stringify(chartJSON.data));
   // block.textContent = JSON.stringify(chartJSON);
   block.appendChild(canvas);
   const ctx = canvas.getContext('2d');
   // Prepare labels and datasets
-  const labels = chartJSON.map((item) => item.name);
-  const rexultiData = chartJSON.map((item) => item.rexulti);
-  const placeboData = chartJSON.map((item) => item.placebo);
+  const labels = chartJSON.data.map((item) => item['Label Name']);
+  const rexultiData = chartJSON.data.map((item) => item.Rexulti);
+  const placeboData = chartJSON.data.map((item) => item.Placebo);
   // Chart config
   const config = {
     type: chartType,
@@ -93,7 +90,7 @@ export default async function decorate(block) {
           beginAtZero: false, // because values are negative
           title: {
             display: true,
-            text: 'Aggressive Behaviors',
+            text: yAxisLabel,
             font: {
               size: 14,
               family: 'Roboto',
@@ -120,9 +117,6 @@ export default async function decorate(block) {
       },
     },
   };
-  // Render char
-  // document.onload = () => {
-  //   new Chart(ctx, config);
-  // };
+
   new Chart(ctx, config);
 }
