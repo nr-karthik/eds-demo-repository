@@ -5,6 +5,37 @@ async function getChartJSON() {
 }
 
 export default async function decorate(block) {
+  let relativeJSONPath = null;
+  let yAxisLabel = null;
+  let xAxisLabel = null;
+  let chartType = null;
+
+  const children = Array.from(block.children);
+
+  children.forEach((child, i) => {
+    if (i === 0) {
+      relativeJSONPath = child.querySelector('a').getAttribute('href');
+      child.style.display = 'none';
+    } else if (i === 1) {
+      yAxisLabel = child.querySelector([
+        'p[data-aue-prop="yAxisLabel"]',
+      ])?.textContent;
+      child.style.display = 'none';
+    } else if (i === 2) {
+      xAxisLabel = child.querySelector([
+        'p[data-aue-prop="xAxisLabel"]',
+      ])?.textContent;
+      child.style.display = 'none';
+    } else if (i === 3) {
+      chartType = child.querySelector([
+        'p[data-aue-prop="chartType"]',
+      ])?.textContent;
+      child.style.display = 'none';
+    }
+  });
+
+  console.log(relativeJSONPath, yAxisLabel, xAxisLabel, chartType);
+
   // await waitForChartJS();
   const canvas = document.createElement('canvas');
   canvas.id = 'myChart';
