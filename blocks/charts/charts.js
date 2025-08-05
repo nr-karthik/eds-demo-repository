@@ -129,14 +129,14 @@ export default async function decorate(block) {
   if (chartType === 'line') {
     const labels = chartJSON.data
       .filter((item) => item.name === '-13.3')
-      .map((item) => item.dataset_2);
+      .map((item) => item.dataset_1);
 
     const groupByName = (name) =>
       chartJSON.data
         .filter((item) => item.name === name)
-        .map((item) => item.dataset_1);
+        .map((item) => item.dataset_2);
 
-    console.log(labels, groupByName('-13.3'), groupByName('-20.0'));
+    console.log(labels, groupByName('-13.3'), groupByName('-20'));
 
     // Chart config
     config = {
@@ -153,7 +153,7 @@ export default async function decorate(block) {
           },
           {
             label: '-20.0',
-            data: groupByName('-20.0'),
+            data: groupByName('-20'),
             backgroundColor: 'rgba(136, 136, 136)',
             borderColor: 'rgba(136, 136, 136)',
             borderWidth: 1,
