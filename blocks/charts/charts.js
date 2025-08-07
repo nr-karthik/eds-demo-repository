@@ -161,7 +161,7 @@ export default async function decorate(block) {
         ],
       },
       options: {
-        responsive: false,
+        responsive: true,
         maintainAspectRatio: true,
         scales: {
           x: {
