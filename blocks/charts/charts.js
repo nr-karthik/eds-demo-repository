@@ -42,6 +42,7 @@ export default async function decorate(block) {
   const chartJSON = await getChartJSON(API_URL);
   console.log(chartJSON.data);
   console.log(chartTitle, relativeJSONPath, yAxisLabel, xAxisLabel, chartType);
+  console.log(window.innerHeight, window.innerWidth);
 
   const canvas = document.createElement('canvas');
   canvas.id = 'myChart';
