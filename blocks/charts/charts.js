@@ -82,7 +82,7 @@ export default async function decorate(block) {
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             beginAtZero: false, // because values are negative
@@ -163,12 +163,12 @@ export default async function decorate(block) {
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
             title: {
               display: true,
-              text: 'Week',
+              text: xAxisLabel,
               font: {
                 weight: 'bold',
                 size: 14,
@@ -185,7 +185,7 @@ export default async function decorate(block) {
           y: {
             title: {
               display: true,
-              text: 'LS mean change in PANSS total score',
+              text: yAxisLabel,
               font: {
                 size: 14,
                 family: 'Roboto',
