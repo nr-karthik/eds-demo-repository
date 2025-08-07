@@ -162,7 +162,7 @@ export default async function decorate(block) {
       },
       options: {
         responsive: false,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         scales: {
           x: {
             title: {
