@@ -80,8 +80,8 @@ export default async function decorate(block) {
         ],
       },
       options: {
-        responsive: false,
-        maintainAspectRatio: false,
+        responsive: true,
+        maintainAspectRatio: true,
         scales: {
           x: {
             beginAtZero: false, // because values are negative
