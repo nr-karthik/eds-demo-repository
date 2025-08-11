@@ -79,6 +79,8 @@ export default async function decorate(block) {
     borderWidth: 1,
   }));
 
+  console.log(datasets);
+
   if (chartType === 'bar') {
     // Prepare labels and datasets
     const labels = chartDataJSON.data.map((item) => item['Label Name']);
