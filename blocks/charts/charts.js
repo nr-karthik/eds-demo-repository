@@ -140,7 +140,9 @@ export default async function decorate(block) {
   }
 
   if (chartType === 'line') {
-    const labels = new Set(chartDataJSON.data.map((item) => item.dataset_1));
+    const labels = Array.from(
+      new Set(chartDataJSON.data.map((item) => item.dataset_1))
+    );
 
     console.log(labels);
 
