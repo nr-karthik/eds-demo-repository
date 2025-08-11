@@ -57,33 +57,38 @@ export default async function decorate(block) {
   const ctx = canvas.getContext('2d');
   let config = null;
 
+  const groupByName = (label) => {
+    if (chartType === 'line') {
+      return chartDataJSON.data
+        .filter((item) => item.name === label)
+        .map((item) => item.dataset_2);
+    }
+
+    if (chartType === 'bar') {
+      return chartDataJSON.data.map((item) => item[label]);
+    }
+
+    return '';
+  };
+
+  const datasets = chartConfigJSON.data.map((item) => ({
+    label: item.label,
+    data: groupByName(item.label),
+    backgroundColor: item.background_color,
+    borderColor: item.background_color,
+    borderWidth: 1,
+  }));
+
   if (chartType === 'bar') {
     // Prepare labels and datasets
-    const labels = chartJSON.data.map((item) => item['Label Name']);
-    const rexultiData = chartJSON.data.map((item) => item.Rexulti);
-    const placeboData = chartJSON.data.map((item) => item.Placebo);
+    const labels = chartDataJSON.data.map((item) => item['Label Name']);
 
     // Chart config
     config = {
       type: chartType,
       data: {
         labels,
-        datasets: [
-          {
-            label: 'Rexulti',
-            data: rexultiData,
-            backgroundColor: '#769BCD',
-            borderColor: '#769BCD',
-            borderWidth: 1,
-          },
-          {
-            label: 'Placebo',
-            data: placeboData,
-            backgroundColor: 'rgba(136, 136, 136)',
-            borderColor: 'rgba(136, 136, 136)',
-            borderWidth: 1,
-          },
-        ],
+        datasets,
       },
       options: {
         responsive: true,
@@ -133,38 +138,16 @@ export default async function decorate(block) {
   }
 
   if (chartType === 'line') {
-    const labels = chartJSON.data
-      .filter((item) => item.name === '-13.3')
-      .map((item) => item.dataset_1);
+    const labels = chartDataJSON.data[0].map((item) => item.dataset_1);
 
-    const groupByName = (name) =>
-      chartJSON.data
-        .filter((item) => item.name === name)
-        .map((item) => item.dataset_2);
-
-    console.log(labels, groupByName('-13.3'), groupByName('-20'));
+    console.log(labels);
 
     // Chart config
     config = {
       type: chartType,
       data: {
         labels,
-        datasets: [
-          {
-            label: '-13.3',
-            data: groupByName('-13.3'),
-            backgroundColor: 'rgba(118, 155, 205)',
-            borderColor: 'rgba(118, 155, 205)',
-            borderWidth: 1,
-          },
-          {
-            label: '-20.0',
-            data: groupByName('-20'),
-            backgroundColor: 'rgba(136, 136, 136)',
-            borderColor: 'rgba(136, 136, 136)',
-            borderWidth: 1,
-          },
-        ],
+        datasets,
       },
       options: {
         responsive: true,
