@@ -13,7 +13,7 @@ export default async function decorate(block) {
   Array.from(block.children).forEach((child, i) => {
     if (i === 0) {
       relativeJSONPath = child.querySelector('a').getAttribute('href');
-      // child.style.display = 'none';
+      child.style.display = 'none';
     } else if (i === 1) {
       chartTitle = child.querySelector([
         'p[data-aue-prop="chartTitle"]',
@@ -67,8 +67,8 @@ export default async function decorate(block) {
           {
             label: 'Rexulti',
             data: rexultiData,
-            backgroundColor: 'rgba(118, 155, 205)',
-            borderColor: 'rgba(118, 155, 205)',
+            backgroundColor: '#769BCD',
+            borderColor: '#769BCD',
             borderWidth: 1,
           },
           {
