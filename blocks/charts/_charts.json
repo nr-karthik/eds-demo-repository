@@ -23,8 +23,13 @@
       "fields": [
         {
           "component": "text",
-          "name": "chartPath",
-          "label": "Relative Chart JSON Path"
+          "name": "chartConfigPath",
+          "label": "Chart Config Path"
+        },
+        {
+          "component": "text",
+          "name": "chartDataPath",
+          "label": "Chart Data Path"
         },
         {
           "component": "text",

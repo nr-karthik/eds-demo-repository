@@ -4,7 +4,8 @@
     "/content/nrk-eds-demo/configuration:/.helix/config.json",
     "/content/nrk-eds-demo/metadata:/metadata.json",
     "/content/nrk-eds-demo/bar--chart:/bar--chart.json",
-    "/content/nrk-eds-demo/line-chart:/line-chart.json"
+    "/content/nrk-eds-demo/line-chart:/line-chart.json",
+    "/content/nrk-eds-demo/bar-chart-config:/bar-chart-config.json"
   ],
   "includes": ["/content/nrk-eds-demo/"]
 }

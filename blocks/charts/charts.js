@@ -3,7 +3,8 @@ async function getChartJSON(API_URL) {
 }
 
 export default async function decorate(block) {
-  let relativeJSONPath = null;
+  let chartConfigPath = null;
+  let chartDataPath = null;
   let yAxisLabel = null;
   let xAxisLabel = null;
   let chartType = null;
@@ -12,24 +13,27 @@ export default async function decorate(block) {
   // Get all child elements of block
   Array.from(block.children).forEach((child, i) => {
     if (i === 0) {
-      relativeJSONPath = child.querySelector('a').getAttribute('href');
+      chartConfigPath = child.querySelector('a').getAttribute('href');
       child.style.display = 'none';
     } else if (i === 1) {
+      chartDataPath = child.querySelector('a').getAttribute('href');
+      child.style.display = 'none';
+    } else if (i === 2) {
       chartTitle = child.querySelector([
         'p[data-aue-prop="chartTitle"]',
       ])?.textContent;
       child.style.display = 'none';
-    } else if (i === 2) {
+    } else if (i === 3) {
       yAxisLabel = child.querySelector([
         'p[data-aue-prop="yAxisLabel"]',
       ])?.textContent;
       child.style.display = 'none';
-    } else if (i === 3) {
+    } else if (i === 4) {
       xAxisLabel = child.querySelector([
         'p[data-aue-prop="xAxisLabel"]',
       ])?.textContent;
       child.style.display = 'none';
-    } else if (i === 4) {
+    } else if (i === 5) {
       chartType = child.querySelector([
         'p[data-aue-prop="chartType"]',
       ])?.textContent;
@@ -38,11 +42,12 @@ export default async function decorate(block) {
   });
 
   // await waitForChartJS();
-  const API_URL = new URL(relativeJSONPath, window.location.href);
-  const chartJSON = await getChartJSON(API_URL);
-  console.log(chartJSON.data);
-  console.log(chartTitle, relativeJSONPath, yAxisLabel, xAxisLabel, chartType);
-  console.log(window.innerHeight, window.innerWidth);
+
+  const CONFIG_API_URL = new URL(chartConfigPath, window.location.href);
+  const chartConfigJSON = await getChartJSON(CONFIG_API_URL);
+  const DATA_API_URL = new URL(chartDataPath, window.location.href);
+  const chartDataJSON = await getChartJSON(DATA_API_URL);
+  console.log(chartConfigJSON.data, chartDataJSON.data);
 
   const canvas = document.createElement('canvas');
   canvas.id = 'myChart';
