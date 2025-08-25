@@ -250,7 +250,7 @@ main > .section {
   margin: 40px 0;
 }
 
-main > .section > div {
+main > .section > div:not(.charts-wrapper) {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
