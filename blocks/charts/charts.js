@@ -79,7 +79,7 @@ export default async function decorate(block) {
     borderWidth: 1,
   }));
 
-  console.log(datasets);
+  console.log(chartType, datasets);
 
   if (chartType === 'bar') {
     // Prepare labels and datasets
