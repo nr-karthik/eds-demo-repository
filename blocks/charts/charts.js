@@ -43,9 +43,9 @@ export default async function decorate(block) {
 
   // await waitForChartJS();
 
-  const CONFIG_API_URL = new URL(chartConfigPath, window.location.href);
+  const CONFIG_API_URL = new URL(chartConfigPath, window.location.origin).href;
   const chartConfigJSON = await getChartJSON(CONFIG_API_URL);
-  const DATA_API_URL = new URL(chartDataPath, window.location.href);
+  const DATA_API_URL = new URL(chartDataPath, window.location.origin).href;
   const chartDataJSON = await getChartJSON(DATA_API_URL);
   console.log(chartConfigJSON.data, chartDataJSON.data);
 
@@ -144,7 +144,7 @@ export default async function decorate(block) {
       new Set(chartDataJSON.data.map((item) => item.dataset_1))
     );
 
-    console.log(labels);
+    console.log('Labels', labels);
 
     // Chart config
     config = {
