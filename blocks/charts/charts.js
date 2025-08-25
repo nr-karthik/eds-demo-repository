@@ -19,24 +19,16 @@ export default async function decorate(block) {
       chartDataPath = child.querySelector('a').getAttribute('href');
       child.style.display = 'none';
     } else if (i === 2) {
-      chartTitle = child.querySelector([
-        'p[data-aue-prop="chartTitle"]',
-      ])?.textContent;
+      chartTitle = child.querySelector(['p'])?.textContent;
       child.style.display = 'none';
     } else if (i === 3) {
-      yAxisLabel = child.querySelector([
-        'p[data-aue-prop="yAxisLabel"]',
-      ])?.textContent;
+      yAxisLabel = child.querySelector(['p'])?.textContent;
       child.style.display = 'none';
     } else if (i === 4) {
-      xAxisLabel = child.querySelector([
-        'p[data-aue-prop="xAxisLabel"]',
-      ])?.textContent;
+      xAxisLabel = child.querySelector(['p'])?.textContent;
       child.style.display = 'none';
     } else if (i === 5) {
-      chartType = child.querySelector([
-        'p[data-aue-prop="chartType"]',
-      ])?.textContent;
+      chartType = child.querySelector(['p'])?.textContent;
       child.style.display = 'none';
     }
   });
